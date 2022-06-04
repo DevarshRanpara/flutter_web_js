@@ -52,6 +52,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 print(_jsHelper.getPlatformFromJS());
               },
             ),
+            const SizedBox(height: 16),
+            MaterialButton(
+              color: Colors.blue,
+              child: const Text(
+                "JS Promise",
+                style: TextStyle(color: Colors.white),
+              ),
+              onPressed: () async {
+                print("Calling JS promise");
+                String dataFromJS = await _jsHelper.callJSPromise();
+                print(dataFromJS);
+              },
+            ),
           ],
         ),
       ),
